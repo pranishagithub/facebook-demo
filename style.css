@@ -1,0 +1,498 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Facebook Logo */
+.fb-logo {
+  font-size: 40px;
+  color: #1877f2;
+  margin-bottom: 20px;
+}
+
+/* ========== LOGIN PAGE ========== */
+body.login-page {
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.forgot-link {
+  display: block;
+  margin: 12px 0;
+  font-size: 14px;
+  color: #1877f2;
+  text-decoration: none;
+}
+
+.create-btn {
+  background-color: #42b72a;
+  margin-top: 10px;
+}
+
+/* ========== HOME PAGE ========== */
+body.home-page {
+  background: #f0f2f5;
+}
+
+.fb-header {
+  background: #1877f2;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fb-header nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.feed-container {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.create-post {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.create-post textarea {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.create-post button {
+  background: #1877f2;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+}
+
+.post {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Profile Styles */
+.profile-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.profile-pic {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Friend List Styles */
+.friend-list {
+  list-style: none;
+  padding: 0;
+}
+.friend-list li {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+.friend-list img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .fb-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-bar a,
+  .fb-header nav a {
+    display: block;
+    margin: 5px 0;
+  }
+  .feed-container {
+    padding: 10px;
+  }
+}
+
+.notifications-list {
+  list-style: none;
+  padding: 0;
+}
+
+.notifications-list li {
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.notifications-list .time {
+  color: gray;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.chat-box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  max-width: 70%;
+}
+
+.message.from {
+  background-color: #f1f0f0;
+  align-self: flex-start;
+}
+
+.message.to {
+  background-color: #d1e7ff;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.message-form {
+  display: flex;
+  gap: 10px;
+}
+
+.message-form input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.message-form button {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
+.image-input {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.post-image {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.stories {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.story {
+  flex: 0 0 auto;
+  text-align: center;
+  cursor: pointer;
+    width: 90px;
+}
+
+.story img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 3px solid #1877f2;
+  transition: transform 0.3s ease;
+}
+
+.story p {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.story:hover img {
+  transform: scale(1.1);
+}
+
+/* Header Enhancements */
+.fb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #1877f2;
+  color: white;
+  padding: 15px 20px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Search Box */
+.search-box {
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+.dark-mode-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.dark-mode-switch input:checked + .slider {
+  background-color: #333;
+}
+.dark-mode-switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/* Nav Menu */
+.fb-header nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.fb-header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Like Button */
+.post button.like-btn {
+  background-color: #eee;
+  color: #333;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.post button.like-btn:hover {
+  background-color: #ccc;
+}
+
+/* Hamburger for Mobile */
+.hamburger {
+  display: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .fb-header nav {
+    flex-direction: column;
+    display: none;
+  }
+  .fb-header nav.show {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+body.dark-mode .feed-container,
+body.dark-mode .post,
+body.dark-mode .create-post,
+body.dark-mode .stories,
+body.dark-mode .chat-box,
+body.dark-mode .profile-box {
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+}
+body.dark-mode .search-box {
+  background-color: #333;
+  color: white;
+}
+body.dark-mode .like-btn {
+  background-color: #444;
+  color: white;
+}
+
+.comment-box {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.comment-box input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.comment-box button {
+  padding: 8px 12px;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Dark mode support for comment box */
+body.dark-mode .comment-box input {
+  background-color: #333;
+  color: white;
+  border-color: #555;
+}
+body.dark-mode .comment-box button {
+  background-color: #555;
+}
+
+/* ========== Mobile Responsive Enhancements ========== */
+
+@media (max-width: 768px) {
+  .fb-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fb-header nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .feed-container {
+    padding: 10px;
+  }
+
+  .create-post textarea,
+  .image-input,
+  .comment-box input {
+    width: 100%;
+  }
+
+  .story {
+    width: 70px;
+  }
+
+  .story img {
+    width: 60px;
+    height: 60px;
+  }
+
+.post-image {
+  display: block;       /* Add this line */
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+  .post,
+  .profile-box,
+  .chat-box {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
