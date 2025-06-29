@@ -1,36 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>My Profile</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="home-page">
-    <header class="fb-header">
-      <h1 class="fb-logo">facebook</h1>
-      <nav>
-        <a href="home.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="friends.html">Friends</a>
-        <a href="index.html">Logout</a>
-        <a href="notifications.html">Notifications</a>
-        <a href="message.html">Messages</a>
+<head>
+  <meta charset="UTF-8" />
+  <title>My Profile</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+    .fb-header {
+      background: #1877f2;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .fb-header nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .feed-container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .profile-box {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .post-form textarea {
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+      resize: none;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .post-form input[type="file"] {
+      margin-top: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .post-form button {
+      margin-top: 10px;
+      background: #1877f2;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .posts {
+      margin-top: 30px;
+    }
+    .post-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .post-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .author-pic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .author-name {
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .post-item img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header class="fb-header">
+    <h1>facebook</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="friends.html">Friends</a>
+      <a href="index.html">Logout</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="message.html">Messages</a>
+    </nav>
+  </header>
 
+  <div class="feed-container">
+    <div class="profile-box">
+      <img src="chovar.jpg" alt="Profile" class="profile-pic" />
+      <h2>Pranisha Maharjan</h2>
+      <p>Bio: Dreamer | Foodie | Coder</p>
 
-
-      </nav>
-    </header>
-
-    <div class="feed-container">
-      <div class="profile-box">
-        <img
-          src="https://via.placeholder.com/100"
-          alt="Profile"
-          class="profile-pic"
-        />
-        <h2>Pranisha Maharjan</h2>
-        <p>Bio: Dreamer | Foodie | Coder</p>
+      <div class="post-form">
+        <textarea id="post-text" placeholder="Write something or share a meme..."></textarea>
+        <input type="file" id="post-image" accept="image/*" />
+        <button id="post-btn">Post</button>
       </div>
     </div>
-  </body>
+
+<div class="posts" id="posts-container">
+  <!-- Pre-posted meme -->
+  <div class="post-item">
+    <div class="post-author">
+      <img src="chovar.jpg" alt="Pranisha Maharjan" class="author-pic" />
+      <strong class="author-name">Pranisha Maharjan</strong>
+    </div>
+    <p>Sahi ho sahi !</p>
+    <img src="meme.jpg" alt="Sample Meme" />
+  </div>
+  <!-- New posts will be added above this -->
+</div>
+
+
+  <script>
+    document.getElementById('post-btn').addEventListener('click', function() {
+      const text = document.getElementById('post-text').value.trim();
+      const imageInput = document.getElementById('post-image');
+      const postsContainer = document.getElementById('posts-container');
+
+      if (!text && !imageInput.files.length) {
+        alert('Please write something or select an image.');
+        return;
+      }
+
+      const postDiv = document.createElement('div');
+      postDiv.className = 'post-item';
+
+      // Author info
+      const authorDiv = document.createElement('div');
+      authorDiv.className = 'post-author';
+
+      const authorImg = document.createElement('img');
+      authorImg.src = 'chovar.jpg'; // Your profile photo
+      authorImg.alt = 'Pranisha Maharjan';
+      authorImg.className = 'author-pic';
+
+      const authorName = document.createElement('strong');
+      authorName.className = 'author-name';
+      authorName.textContent = 'Pranisha Maharjan';
+
+      authorDiv.appendChild(authorImg);
+      authorDiv.appendChild(authorName);
+      postDiv.appendChild(authorDiv);
+
+      // Post text
+      if (text) {
+        const p = document.createElement('p');
+        p.textContent = text;
+        postDiv.appendChild(p);
+      }
+
+      // Post image
+      if (imageInput.files.length) {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(imageInput.files[0]);
+        img.alt = 'Posted Image';
+        postDiv.appendChild(img);
+      }
+
+      // Add new post on top
+      postsContainer.prepend(postDiv);
+
+      // Clear inputs
+      document.getElementById('post-text').value = '';
+      imageInput.value = '';
+    });
+  </script>
+</body>
 </html>

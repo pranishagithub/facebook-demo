@@ -4,119 +4,164 @@
     <meta charset="UTF-8" />
     <title>Facebook - Home</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .author-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .author-pic {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    </style>
   </head>
   <body class="home-page">
-  <header class="fb-header">
-  <h1 class="fb-logo">facebook</h1>
+    <header class="fb-header">
+      <h1 class="fb-logo">facebook</h1>
 
-  <!-- Search + Toggle -->
-  <div class="header-right">
-    <input type="text" placeholder="Search Facebook..." class="search-box" />
-    <label class="dark-mode-switch">
-      <input type="checkbox" id="darkToggle" />
-      <span class="slider"></span>
-    </label>
-
-    <!-- Mobile Menu Icon -->
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-
-    <!-- Nav Links -->
-    <nav id="navMenu">
-      <a href="home.html">Home</a>
-      <a href="profile.html">Profile</a>
-      <a href="friends.html">Friends</a>
-      <a href="notifications.html">Notifications</a>
-      <a href="message.html">Messages</a>
-      <a href="index.html">Logout</a>
-    </nav>
-  </div>
-</header>
-
+      <div class="header-right">
+        <input
+          type="text"
+          placeholder="Search Facebook..."
+          class="search-box"
+        />
+        <label class="dark-mode-switch">
+          <input type="checkbox" id="darkToggle" />
+          <span class="slider"></span>
+        </label>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav id="navMenu">
+          <a href="home.html">Home</a>
+          <a href="profile.html">Profile</a>
+          <a href="friends.html">Friends</a>
+          <a href="notifications.html">Notifications</a>
+          <a href="message.html">Messages</a>
+          <a href="index.html">Logout</a>
+        </nav>
+      </div>
+    </header>
 
     <main class="feed-container">
+      <!-- Stories Section -->
+      <div class="stories">
+        <div class="story">
+          <img src="chovar.jpg" alt="Pranisha" />
+          <p>Pranisha</p>
+        </div>
+        <div class="story">
+          <img src="jharana.png" alt="Jharana" />
+          <p>Jharana</p>
+        </div>
+        <div class="story">
+          <img src="kali.png" alt="Kritika" />
+          <p>Kritika</p>
+        </div>
+        <div class="story">
+          <img src="dai.png" alt="Pranish" />
+          <p>Pranish</p>
+        </div>
+        <div class="story">
+          <img src="ronisha.png" alt="Ronesh" />
+          <p>Ronesh</p>
+        </div>
+      </div>
 
-<!-- Stories Section -->
-<div class="stories">
-  <div class="story">
-    <img src="chovar.jpg" alt="Pranisha" />
-    <p>Pranisha</p>
-  </div>
-  <div class="story">
-    <img src="jharana.png" alt="John" />
-    <p>Jharana</p>
-  </div>
-  <div class="story">
-    <img src="kali.png" alt="Jane" />
-    <p>Kritika</p>
-  </div>
-  <div class="story">
-    <img src="dai.png" alt="Sita" />
-    <p>Pranish</p>
-  </div>
-  <div class="story">
-    <img src="ronisha.png" alt="Nabin" />
-    <p>Ronesh</p>
-  </div>
-</div>
-
-
-
+      <!-- Create Post -->
       <div class="create-post">
-  <textarea placeholder="What's on your mind?"></textarea>
-  <input type="file" accept="image/*" class="image-input" />
-  <button>Post</button>
-</div>
+        <textarea placeholder="What's on your mind?"></textarea>
+        <input type="file" accept="image/*" class="image-input" />
+        <button>Post</button>
+      </div>
 
-<!-- POST -->
-
-
+      <!-- POST 1 -->
       <div class="post">
-        <h3>Jharana Kandel</h3>
+        <div class="author-info">
+          <img src="jharana.png" alt="Jharana Kandel" class="author-pic" />
+          <h3>Jharana Kandel</h3>
+        </div>
         <p>Had a great day today!</p>
-          <div class="comment-box">
-    <input type="text" placeholder="Write a comment..." />
-    <button>Post</button>
-      </div>
+        <div class="like-wrapper">
+          <button class="like-btn">Like 👍</button>
+          <div class="reaction-box">
+            <span>👍</span>
+            <span>❤️</span>
+            <span>😂</span>
+            <span>😮</span>
+            <span>😢</span>
+          </div>
+        </div>
+        <div class="comment-box">
+          <input type="text" placeholder="Write a comment..." />
+          <button>Post</button>
+        </div>
       </div>
 
+      <!-- POST 2 -->
       <div class="post">
-        <h3>Kritika Maharjan</h3>
-         <p>Exploring Kathmandu with my sister</p>
+        <div class="author-info">
+          <img src="kali.png" alt="Kritika Maharjan" class="author-pic" />
+          <h3>Kritika Maharjan</h3>
+        </div>
+        <p>Exploring Kathmandu with my sister</p>
         <img src="masala.png" class="post-image" />
-    <button class="like-btn">Like 👍</button>
-      <div class="comment-box">
-    <input type="text" placeholder="Write a comment..." />
-    <button>Post</button>
-</div>
-</div>
-       
+        <div class="like-wrapper">
+          <button class="like-btn">Like 👍</button>
+          <div class="reaction-box">
+            <span>👍</span>
+            <span>❤️</span>
+            <span>😂</span>
+            <span>😮</span>
+            <span>😢</span>
+          </div>
+        </div>
 
-<div class="post">
-  <h3>Pranisha Maharjan</h3>
-  <p>Thank you my love for this bouquet.</p>
-  <img src="aloha.jpg" alt="Sample Post Image" class="post-image" />
-    <button class="like-btn">Like 👍</button>
-      <div class="comment-box">
-    <input type="text" placeholder="Write a comment..." />
-    <button>Post</button>
+        <div class="comment-box">
+          <input type="text" placeholder="Write a comment..." />
+          <button>Post</button>
+        </div>
+      </div>
 
-</div>
+      <!-- POST 3 -->
+      <div class="post">
+        <div class="author-info">
+          <img src="chovar.jpg" alt="Pranisha Maharjan" class="author-pic" />
+          <h3>Pranisha Maharjan</h3>
+        </div>
+        <p>Thank you my love for this bouquet.</p>
+        <img src="aloha.jpg" alt="Sample Post Image" class="post-image" />
+        <div class="like-wrapper">
+          <button class="like-btn">Like 👍</button>
+          <div class="reaction-box">
+            <span>👍</span>
+            <span>❤️</span>
+            <span>😂</span>
+            <span>😮</span>
+            <span>😢</span>
+          </div>
+        </div>
+        <div class="comment-box">
+          <input type="text" placeholder="Write a comment..." />
+          <button>Post</button>
+        </div>
       </div>
     </main>
 
-<script>
-  // Dark Mode Toggle
-  const toggle = document.getElementById('darkToggle');
-  toggle.addEventListener('change', () => {
-    document.body.classList.toggle('dark-mode');
-  });
+    <script>
+      // Dark Mode Toggle
+      const toggle = document.getElementById("darkToggle");
+      toggle.addEventListener("change", () => {
+        document.body.classList.toggle("dark-mode");
+      });
 
-  // Hamburger Toggle
-  function toggleMenu() {
-    document.getElementById("navMenu").classList.toggle("show");
-  }
-</script>
-
-
+      // Hamburger Toggle
+      function toggleMenu() {
+        document.getElementById("navMenu").classList.toggle("show");
+      }
+    </script>
   </body>
 </html>
